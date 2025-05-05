@@ -1,0 +1,64 @@
+/**
+ * Uma pilha é uma coleção em que os últimos elementos
+ * adicionados são os primeiros a serem removidos
+ * (Last-In-First-Out). Esta classe implementa uma pilha
+ * de strings.
+ */
+public class Pilha
+{
+    private String[] items;
+    private int nItems;
+
+    /**
+     * Constrói uma pilha.
+     * 
+     */
+    public Pilha()
+    {
+        /*
+        * Limitada a 5 elementos apenas para facilitar
+        * a geração de exceções no acesso ao vetor.)
+        */
+        this.items=new String[5];
+        this.nItems=0;
+    }
+
+    /**
+     * Empilha uma string s no topo da pilha.
+     * 
+     * Pré-condição: pilha tem menos de 5 elementos.
+     */
+    public void empilha(String s)
+    {
+        this.items[this.nItems]=s;
+        this.nItems++;
+    }
+
+    /**
+     * Retorna o elemento no topo da pilha, retirando-o
+     * da pilha.
+     * 
+     * Pré-condição: pilha não está vazia
+     */
+    public String desempilha()
+    {
+        nItems--;
+        return items[nItems];
+    }
+
+    /**
+     * Indica se a pilha está vazia.
+     */
+    public boolean isVazia()
+    {
+        return (nItems==0);
+    }
+
+    /*
+     * Retorna o número de elementos na pilha.
+     */
+    public int getTamanho()
+    {
+        return nItems;
+    }
+}
