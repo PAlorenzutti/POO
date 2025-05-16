@@ -6,33 +6,40 @@ public class Empresa {
 
     private HashSet<Departamento> departamentos;
 
-    Empresa(String nome){
+    public Empresa(String nome){
         this.nome = nome;
 
         departamentos = new HashSet<>();
     }
 
-    String getNome(){
+    public String getNome(){
         return this.nome;
     }
 
-    void addDepartamento(Departamento departamento){
+    public void addDepartamento(Departamento departamento){
         this.departamentos.add(departamento);
     }
 
-    void removeDepartamento(Departamento departamento){
+    public void removeDepartamento(Departamento departamento){
         this.departamentos.remove(departamento);
     }  
 
-    float getMediaIdadeEmpresa(){
+    public float getMediaIdadeEmpresa(){
         int totalPessoas = 0;
         int totalIdade = 0;
 
         for(Departamento departamento : this.departamentos){
-            totalPessoas += departamento.getSizePessoas();
-            totalIdade += departamento.totalIdade();
+            totalPessoas += departamento.getNumeroPessoas();
+            
+            for(Pessoa pessoa : departamento.getPessoas()){
+                totalIdade += pessoa.getIdade();
+            }
         }
 
-        return (float) totalIdade / totalPessoas;
+        if(totalPessoas != 0){
+            return (float) totalIdade / totalPessoas;
+        }else{
+            return 0;
+        }
     }
 }

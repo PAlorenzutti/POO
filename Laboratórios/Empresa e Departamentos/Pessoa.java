@@ -4,7 +4,7 @@ public class Pessoa{
     private String nome;
     private LocalDate nascimento;
 
-    Pessoa(String nome, int year, int month, int day){
+    public Pessoa(String nome, int year, int month, int day){
         this.nome = nome;
         this.nascimento = LocalDate.of(year, month, day);
     }
@@ -17,7 +17,7 @@ public class Pessoa{
         return nome;
     }
 
-    int getIdade(){
+    public int getIdade(){
         LocalDate atual = LocalDate.now();
 
         int idade = atual.getYear() - this.nascimento.getYear();

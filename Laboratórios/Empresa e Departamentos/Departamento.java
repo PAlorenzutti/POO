@@ -5,34 +5,28 @@ public class Departamento {
     private String nome;
     private HashSet<Pessoa> pessoas;
 
-    Departamento(String nome){
+    public Departamento(String nome){
         this.nome = nome;
         this.pessoas = new HashSet<>();
     }
 
-    String getNome(){
+    public String getNome(){
         return this.nome;
     }
 
-    void addPessoa(Pessoa pessoa){
+    public void addPessoa(Pessoa pessoa){
         this.pessoas.add(pessoa);
     }
 
-    void removePessoa(Pessoa pessoa){
+    public void removePessoa(Pessoa pessoa){
         this.pessoas.remove(pessoa);
     }
 
-    int totalIdade(){
-        int total = 0;
-
-        for(Pessoa pessoa : this.pessoas){
-            total += pessoa.getIdade();
-        }
-
-        return total;
+    public HashSet<Pessoa> getPessoas(){
+        return pessoas;
     }
 
-    int getSizePessoas(){
+    public int getNumeroPessoas(){
         return this.pessoas.size();
     }
 }
