@@ -1,0 +1,25 @@
+digraph DomicilioEleitoral {
+    // Nós dos Estados (UFs)
+    UF1118140819 [label="UF: Espírito Santo"];
+    UF1118140819 [style=filled, fillcolor=lightblue];
+    M118352462_UF1118140819 [label="Município: Vila Velha"];
+    UF1118140819 -> M118352462_UF1118140819;
+    E925858445 [label="Eleitor: Bruno"];
+    M118352462_UF1118140819 -> E925858445 [label="eleitor"];
+    E925858445 -> M118352462_UF1118140819 [label="domicilioEleitoral"];
+    M1311053135_UF1118140819 [label="Município: Vitória"];
+    UF1118140819 -> M1311053135_UF1118140819;
+    E140435067 [label="Eleitor: Ana"];
+    M1311053135_UF1118140819 -> E140435067 [label="eleitor"];
+    E140435067 -> M1311053135_UF1118140819 [label="domicilioEleitoral"];
+    UF1450495309 [label="UF: Minas Gerais"];
+    UF1450495309 [style=filled, fillcolor=lightblue];
+    M1550089733_UF1450495309 [label="Município: Belo Horizonte"];
+    UF1450495309 -> M1550089733_UF1450495309;
+    E1670782018 [label="Eleitor: Carla"];
+    M1550089733_UF1450495309 -> E1670782018 [label="eleitor"];
+    E1670782018 -> M1550089733_UF1450495309 [label="domicilioEleitoral"];
+    E1706377736 [label="Eleitor: João"];
+    M1550089733_UF1450495309 -> E1706377736 [label="eleitor"];
+    E1706377736 -> M1550089733_UF1450495309 [label="domicilioEleitoral"];
+}
