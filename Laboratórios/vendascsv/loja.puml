@@ -1,0 +1,17 @@
+@startuml loja
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+
+class Loja {
+}
+class Produto {
+}
+class Venda {
+}
+Loja "1" --> "*" Venda
+Loja "1" --> "*" Produto
+Produto "1" <-> "*" Venda : "            "
+
+@enduml
+
